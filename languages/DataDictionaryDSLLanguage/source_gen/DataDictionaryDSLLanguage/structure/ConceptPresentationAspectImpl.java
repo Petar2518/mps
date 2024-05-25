@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Agregation;
   private ConceptPresentation props_Component;
+  private ConceptPresentation props_Constraint;
   private ConceptPresentation props_ExclusiveSpecialization;
   private ConceptPresentation props_Field;
   private ConceptPresentation props_FieldData;
@@ -41,6 +42,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Component = cpb.create();
         }
         return props_Component;
+      case LanguageConceptSwitch.Constraint:
+        if (props_Constraint == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Constraint");
+          props_Constraint = cpb.create();
+        }
+        return props_Constraint;
       case LanguageConceptSwitch.ExclusiveSpecialization:
         if (props_ExclusiveSpecialization == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

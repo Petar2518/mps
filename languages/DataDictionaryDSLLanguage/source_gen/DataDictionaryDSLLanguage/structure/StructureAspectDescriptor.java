@@ -12,12 +12,13 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAgregation = createDescriptorForAgregation();
   /*package*/ final ConceptDescriptor myConceptComponent = createDescriptorForComponent();
+  /*package*/ final ConceptDescriptor myConceptConstraint = createDescriptorForConstraint();
   /*package*/ final ConceptDescriptor myConceptExclusiveSpecialization = createDescriptorForExclusiveSpecialization();
   /*package*/ final ConceptDescriptor myConceptField = createDescriptorForField();
   /*package*/ final ConceptDescriptor myConceptFieldData = createDescriptorForFieldData();
@@ -43,7 +44,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAgregation, myConceptComponent, myConceptExclusiveSpecialization, myConceptField, myConceptFieldData, myConceptFieldDefinition, myConceptFieldDefinitionTable, myConceptFieldReference, myConceptSpecialization, myConceptStructure, myConceptStructureReference, myConceptStructureRepository);
+    return Arrays.asList(myConceptAgregation, myConceptComponent, myConceptConstraint, myConceptExclusiveSpecialization, myConceptField, myConceptFieldData, myConceptFieldDefinition, myConceptFieldDefinitionTable, myConceptFieldReference, myConceptSpecialization, myConceptStructure, myConceptStructureReference, myConceptStructureRepository);
   }
 
   @Override
@@ -54,6 +55,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAgregation;
       case LanguageConceptSwitch.Component:
         return myConceptComponent;
+      case LanguageConceptSwitch.Constraint:
+        return myConceptConstraint;
       case LanguageConceptSwitch.ExclusiveSpecialization:
         return myConceptExclusiveSpecialization;
       case LanguageConceptSwitch.Field:
@@ -106,6 +109,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForConstraint() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DataDictionaryDSLLanguage", "Constraint", 0xc81a5de5c82046dcL, 0xb13e1fa2a0dad109L, 0xd9c26a3203d8f80L);
+    b.class_(false, false, false);
+    b.origin("r:1cb3074c-56f2-4794-a3fe-4907548a0a91(DataDictionaryDSLLanguage.structure)/980701300922355584");
+    b.version(3);
+    b.property("constraint", 0xd9c26a3203d8f82L).type(PrimitiveTypeId.STRING).origin("980701300922355586").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForExclusiveSpecialization() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("DataDictionaryDSLLanguage", "ExclusiveSpecialization", 0xc81a5de5c82046dcL, 0xb13e1fa2a0dad109L, 0x6f4b224578078449L);
     b.class_(false, false, false);
@@ -130,6 +141,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("type", 0x1997240e5a8d3bc4L).type(MetaIdFactory.dataTypeId(0xc81a5de5c82046dcL, 0xb13e1fa2a0dad109L, 0x1997240e5a8d3b8bL)).origin("1843982216498854852").done();
     b.property("length", 0x1997240e5a8d3bc9L).type(PrimitiveTypeId.INTEGER).origin("1843982216498854857").done();
+    b.aggregate("constraint", 0xd9c26a320448b7cL).target(0xc81a5de5c82046dcL, 0xb13e1fa2a0dad109L, 0xd9c26a3203d8f80L).optional(true).ordered(true).multiple(true).origin("980701300922813308").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFieldDefinition() {

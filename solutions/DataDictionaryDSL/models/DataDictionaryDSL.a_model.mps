@@ -20,6 +20,9 @@
       </concept>
       <concept id="8019541243225130333" name="DataDictionaryDSLLanguage.structure.Field" flags="ng" index="nj6so" />
       <concept id="8019541243225146441" name="DataDictionaryDSLLanguage.structure.ExclusiveSpecialization" flags="ng" index="njaoc" />
+      <concept id="980701300922355584" name="DataDictionaryDSLLanguage.structure.Constraint" flags="ng" index="HCq$z">
+        <property id="980701300922355586" name="constraint" index="HCq$x" />
+      </concept>
       <concept id="1843982216498855301" name="DataDictionaryDSLLanguage.structure.FieldDefinition" flags="ng" index="136xAb">
         <child id="1843982216498855306" name="Info" index="136xA4" />
         <child id="1843982216498855304" name="Field" index="136xA6" />
@@ -30,6 +33,7 @@
       <concept id="1843982216498854850" name="DataDictionaryDSLLanguage.structure.FieldData" flags="ng" index="136xZc">
         <property id="1843982216498854857" name="length" index="136xZ7" />
         <property id="1843982216498854852" name="type" index="136xZa" />
+        <child id="980701300922813308" name="constraint" index="HQaRv" />
       </concept>
       <concept id="1843982216498594874" name="DataDictionaryDSLLanguage.structure.FieldReference" flags="ng" index="137A0O">
         <reference id="1843982216498854696" name="fieldRef" index="136xWA" />
@@ -66,6 +70,9 @@
           <node concept="136xZc" id="7jVc_Afe1Ri" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="40" />
+            <node concept="HCq$z" id="Qs9Ecwljcz" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_Afe1Ta" role="136xBB">
@@ -75,6 +82,9 @@
           <node concept="136xZc" id="7jVc_Afe1Tc" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="40" />
+            <node concept="HCq$z" id="Qs9Ecwljc_" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_Afe1Tj" role="136xBB">
@@ -84,6 +94,9 @@
           <node concept="136xZc" id="7jVc_Afe1Tl" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="60" />
+            <node concept="HCq$z" id="Qs9EcwljcD" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_Afe1Tv" role="136xBB">
@@ -119,6 +132,9 @@
           <node concept="136xZc" id="7jVc_Afe1Om" role="136xA4">
             <property role="136xZa" value="1An90TqzjId/IntegerNumber" />
             <property role="136xZ7" value="9" />
+            <node concept="HCq$z" id="Qs9EcwjTbn" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_Afe1Oq" role="136xBB">
@@ -128,6 +144,9 @@
           <node concept="136xZc" id="7jVc_Afe1Os" role="136xA4">
             <property role="136xZa" value="1An90TqzjId/IntegerNumber" />
             <property role="136xZ7" value="8" />
+            <node concept="HCq$z" id="Qs9EcwljcL" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_Afe1Oz" role="136xBB">
@@ -137,6 +156,9 @@
           <node concept="136xZc" id="7jVc_Afe1O_" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="50" />
+            <node concept="HCq$z" id="Qs9EcwljcN" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
       </node>
@@ -151,6 +173,9 @@
           <node concept="136xZc" id="7jVc_AfgncD" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="50" />
+            <node concept="HCq$z" id="Qs9EcwljcR" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_AffLOu" role="136xBB">
@@ -160,6 +185,9 @@
           <node concept="136xZc" id="7jVc_AffLOw" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="100" />
+            <node concept="HCq$z" id="Qs9EcwljcU" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_AffLOB" role="136xBB">
@@ -169,6 +197,12 @@
           <node concept="136xZc" id="7jVc_AffLOD" role="136xA4">
             <property role="136xZa" value="1An90TqzjId/IntegerNumber" />
             <property role="136xZ7" value="4" />
+            <node concept="HCq$z" id="Qs9EcwljcW" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
+            <node concept="HCq$z" id="Qs9EcwljcY" role="HQaRv">
+              <property role="HCq$x" value="before today" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_AffLON" role="136xBB">
@@ -178,6 +212,9 @@
           <node concept="136xZc" id="7jVc_AffLOP" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="100" />
+            <node concept="HCq$z" id="Qs9Ecwljd1" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_AffLP2" role="136xBB">
@@ -228,6 +265,9 @@
           <node concept="136xZc" id="7jVc_AffoQz" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="50" />
+            <node concept="HCq$z" id="Qs9Ecwljd3" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_AffoQB" role="136xBB">
@@ -237,6 +277,9 @@
           <node concept="136xZc" id="7jVc_AffoQD" role="136xA4">
             <property role="136xZa" value="1An90TqzjId/IntegerNumber" />
             <property role="136xZ7" value="13" />
+            <node concept="HCq$z" id="Qs9Ecwljd5" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_AffoQK" role="136xBB">
@@ -246,6 +289,9 @@
           <node concept="136xZc" id="7jVc_AffoQM" role="136xA4">
             <property role="136xZa" value="1An90TqzjIc/String" />
             <property role="136xZ7" value="1" />
+            <node concept="HCq$z" id="Qs9Ecwljdb" role="HQaRv">
+              <property role="HCq$x" value="in (M, Z)" />
+            </node>
           </node>
         </node>
       </node>
@@ -289,6 +335,12 @@
           <node concept="136xZc" id="7jVc_AffLSl" role="136xA4">
             <property role="136xZa" value="1An90TqzjIg/DecimalNumber" />
             <property role="136xZ7" value="10" />
+            <node concept="HCq$z" id="Qs9Ecwljdf" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
+            <node concept="HCq$z" id="Qs9Ecwljdo" role="HQaRv">
+              <property role="HCq$x" value="&gt;0" />
+            </node>
           </node>
         </node>
         <node concept="136xAb" id="7jVc_AffLSp" role="136xBB">
@@ -298,6 +350,9 @@
           <node concept="136xZc" id="7jVc_AffLSr" role="136xA4">
             <property role="136xZa" value="1An90TqzjIJ/Date" />
             <property role="136xZ7" value="20" />
+            <node concept="HCq$z" id="Qs9Ecwljdi" role="HQaRv">
+              <property role="HCq$x" value="not null" />
+            </node>
           </node>
         </node>
       </node>
